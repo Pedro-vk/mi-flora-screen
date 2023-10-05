@@ -1,0 +1,26 @@
+{
+  "name": "mi-flora-screen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:ts": "ts-node src/index.ts",
+    "build": "tsc",
+    "dev": "ts-node-dev --poll --no-notify src/index.ts",
+    "dev:js": "nodemon dist/node/index.js",
+    "deploy:sync": "rsync -av -e ssh --exclude='node_modules' --exclude='.git' ./ ${RPI245_USER}@${RPI245}:/home/${RPI245_USER}/projects/mi-flora-screen",
+    "deploy:dev": "npm run build && npm run deploy:sync",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pedro Gutiérrez",
+  "license": "ISC",
+  "dependencies": {
+    "oled-font-5x7": "^1.0.3",
+    "oled-i2c-bus": "^1.0.12",
+    "oled-rpi-i2c-bus": "^1.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node-dev": "^2.0.0"
+  }
+}
