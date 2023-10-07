@@ -15,8 +15,8 @@
   "author": "Pedro Gutiérrez",
   "license": "ISC",
   "dependencies": {
+    "mqtt": "^5.1.0",
     "oled-font-5x7": "^1.0.3",
-    "oled-i2c-bus": "^1.0.12",
     "oled-rpi-i2c-bus": "^1.1.4"
   },
   "devDependencies": {
